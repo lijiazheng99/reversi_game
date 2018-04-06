@@ -71,8 +71,14 @@ void printBoard(disk board[SIZE][SIZE]){
     j = 0;
 
     printf("\n    ");
+<<<<<<< HEAD
     for(i=0; i< SIZE; i++){
         printf("%c   ",'a'+i);
+=======
+    for(i='a'; i< 'a'+SIZE; i++)
+    {
+        printf("%c   ",i);
+>>>>>>> e76c1fb08ca6ad61833f84cd83248b2724e71745
     }
     for(i=0; i< SIZE; i++){
         printf("\n%d | ", i+1);
