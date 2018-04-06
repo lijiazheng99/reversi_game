@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "disksAndPlayers.h"
 
 
 void initializePlayers(player player1, player player2){
-    int nameSize;
+    unsigned long nameSize;
     // Insert player 1
     printf("Player 1 please insert your name:   \n");
     fgets(player1.name, 20, stdin);
@@ -92,7 +91,13 @@ void printBoard(disk board[SIZE][SIZE]){
                     break;
             }
         }
+        printf("%d", i+1);
     }
-
-    puts(""); 
+    
+    printf("\n    ");
+    for(i=0; i< SIZE; i++){
+        printf("%c   ",'a'+i);
+    }
+    
+    puts("\n"); 
 }
