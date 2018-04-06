@@ -93,4 +93,5 @@ void printBoard(disk board[SIZE][SIZE]){
         }
     }
 
+    puts(""); 
 }
