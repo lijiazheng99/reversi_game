@@ -72,7 +72,7 @@ void printBoard(disk board[SIZE][SIZE]){
 
     printf("\n    ");
     for(i=0; i< SIZE; i++){
-        printf("%d   ",i+1);
+        printf("%c   ",'a'+i);
     }
     for(i=0; i< SIZE; i++){
         printf("\n%d | ", i+1);
