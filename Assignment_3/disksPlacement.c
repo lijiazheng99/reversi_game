@@ -6,13 +6,14 @@
 
 #include "disksAndPlayers.h"
 #include "disksPlacement.h"
-
+#include "termination.h"
 //row:字母那行
 //column:数字那行
 
 
 void players_placement (enum colour defiened_colour, int row, int column, disk board[SIZE][SIZE])
 {
+    /*If the the place is empty, then define the place*/
     if (board[row][column].type==NONE)
     {
         board[row][column].pos.row=row;
@@ -461,4 +462,45 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
         }
     }
 }
+
+void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
+{
+    int White_Counter = 0,Black_Counter = 0;
+    
+    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
+    {
+        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
+        {
+            /*If board is not empty, count the disk*/
+            if (board[Row_Counter][Column_Counter].type != NONE)
+            {
+                if(board[Row_Counter][Column_Counter].type == WHITE)
+                {
+                    White_Counter++;
+                }
+                if(board[Row_Counter][Column_Counter].type == BLACK)
+                {
+                    Black_Counter++;
+                }
+            }
+        }
+    }
+    
+    //Renew player's points after reversi
+    if (player1.type == WHITE)
+    {
+        player1.points = White_Counter;
+        player2.points = Black_Counter;
+    }
+    
+    else if (player1.type == BLACK)
+    {
+        player1.points = Black_Counter;
+        player2.points = White_Counter;
+    }
+}
+
+
+
+
 //This file is create and written by Jiazheng Li 16212162
