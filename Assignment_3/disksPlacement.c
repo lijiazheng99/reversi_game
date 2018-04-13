@@ -463,6 +463,7 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
     }
 }
 
+/*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
 void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
 {
     int White_Counter = 0,Black_Counter = 0;
