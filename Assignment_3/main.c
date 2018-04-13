@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "disksAndPlayers.h"
@@ -18,7 +16,8 @@ int main()
     initializeBoard(board);
 
     printBoard(board);
-
+    
+    computePositions(board[SIZE][SIZE]); 
     //invoke a method that implements the game logic
 
     //invoke a method that prints the final result
