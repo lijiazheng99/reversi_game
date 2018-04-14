@@ -6,11 +6,11 @@
 
 #include "disksAndPlayers.h"
 #include "disksPlacement.h"
-#include "termination.h"
+#include "terminationAndsavefinal.h"
 //row:字母那行
 //column:数字那行
 
-
+/*Sub-Function for place the disk after user made the decision*/
 void players_placement (enum colour defiened_colour, int row, int column, disk board[SIZE][SIZE])
 {
     /*If the the place is empty, then define the place*/
@@ -59,6 +59,7 @@ void players_placement (enum colour defiened_colour, int row, int column, disk b
 //Then it will check is it NONE first. If is NONE just break. Next check the postion one by one, until get the same color of the placed disk. If color of disks between placed disk and ckecked disk is not the same, counter will control loop go back and revese the disks color.
 //Also there definately have some limitation. Row can't smaller than 0 and larger than 8, same as Column. Just to control it won't cause any werid error.
 
+/*Sub-function for reversi after user place the disk*/
 void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk board[SIZE][SIZE])
 {
     //Direction counter will check every direction
@@ -72,9 +73,11 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
         //Switch to defferent color
         switch (defiened_colour)
         {
+            /*Situation for white disks*/
             case WHITE:
                 switch (Direction_Counter)
             {
+                    /*Deriction 0: check up*/
                 case 0:
                     Column_check -= 1;
                     while (Column_check > 0)
@@ -97,6 +100,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Column_check--;
                     }
                     break;
+                    
+                    /*Deriction 1: check up and right*/
                 case 1:
                     Column_check -= 1;
                     Row_check += 1;
@@ -122,6 +127,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 2: check right*/
                 case 2:
                     Row_check += 1;
                     while (Row_check < 9)
@@ -144,6 +151,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 3: check down and right*/
                 case 3:
                     Column_check += 1;
                     Row_check += 1;
@@ -169,6 +178,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 4: check down*/
                 case 4:
                     Column_check += 1;
                     while (Column_check < 9)
@@ -191,6 +202,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Column_check++;
                     }
                     break;
+                    
+                    /*Deriction 5: check down and left*/
                 case 5:
                     Column_check += 1;
                     Row_check -= 1;
@@ -216,6 +229,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check--;
                     }
                     break;
+                    
+                    /*Deriction 6: check left*/
                 case 6:
                     Row_check -= 1;
                     while (Row_check > 0)
@@ -238,6 +253,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check--;
                     }
                     break;
+                    
+                    /*Deriction 7: check up and left*/
                 case 7:
                     Column_check -= 1;
                     Row_check -= 1;
@@ -266,9 +283,11 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
             }
                 break;
                 
+                /*Situation for black disks*/
             case BLACK:
                 switch (Direction_Counter)
             {
+                    /*Deriction 0: check up*/
                 case 0:
                     Column_check -= 1;
                     while (Column_check > 0)
@@ -291,6 +310,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Column_check--;
                     }
                     break;
+                    
+                    /*Deriction 1: check up and right*/
                 case 1:
                     Column_check -= 1;
                     Row_check += 1;
@@ -316,6 +337,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 2: check right*/
                 case 2:
                     Row_check += 1;
                     while (Row_check < 9)
@@ -338,6 +361,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 3: check down and right*/
                 case 3:
                     Column_check += 1;
                     Row_check += 1;
@@ -363,6 +388,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check++;
                     }
                     break;
+                    
+                    /*Deriction 4: check down*/
                 case 4:
                     Column_check += 1;
                     while (Column_check < 9)
@@ -385,6 +412,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Column_check++;
                     }
                     break;
+                    
+                    /*Deriction 5: check down and left*/
                 case 5:
                     Column_check += 1;
                     Row_check -= 1;
@@ -410,6 +439,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check--;
                     }
                     break;
+                    
+                    /*Deriction 6: check left*/
                 case 6:
                     Row_check -= 1;
                     while (Row_check > 0)
@@ -432,6 +463,8 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         Row_check--;
                     }
                     break;
+                    
+                    /*Deriction 7: check up and left*/
                 case 7:
                     Column_check -= 1;
                     Row_check -= 1;
@@ -459,26 +492,35 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                     break;
             }
                 break;
+                
+            case NONE:
+                /*This is impossible, I just don't want IDE display the warning of lost one condition*/
+                break;
         }
     }
 }
 
 /*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
+/*Sub-function for renew points by count different color of disks*/
 void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
 {
+    //Two counter for different color of disks
     int White_Counter = 0,Black_Counter = 0;
     
+    //for loop for counting
     for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
     {
         for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
         {
-            /*If board is not empty, count the disk*/
+            //If board is not empty, count the disk
             if (board[Row_Counter][Column_Counter].type != NONE)
             {
+                //count white disks
                 if(board[Row_Counter][Column_Counter].type == WHITE)
                 {
                     White_Counter++;
                 }
+                //count black disks
                 if(board[Row_Counter][Column_Counter].type == BLACK)
                 {
                     Black_Counter++;
@@ -499,9 +541,6 @@ void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE]
         player1.points = Black_Counter;
         player2.points = White_Counter;
     }
+    
 }
-
-
-
-
 //This file is create and written by Jiazheng Li 16212162
