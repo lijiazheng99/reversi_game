@@ -6,11 +6,15 @@
 
 #include "disksAndPlayers.h"
 #include "disksPlacement.h"
-#include "termination.h"
+#include "terminationAndsavefinal.h"
 
 /*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
-void Termination_By_NoMoreEmptySpace (player player1, player player2 , disk board[SIZE][SIZE])
+//Sub-function for termination by the condition of no more empty space
+int Termination_By_NoMoreEmptySpace (player player1, player player2 , disk board[SIZE][SIZE])
 {
+    //Termination result for control the while loop in main function
+    int Termination_Result = 0;
+    
     /*First check board avaliablity by empty spcace*/
     int Empty_Sapce_Counter = 64;
 
@@ -43,7 +47,43 @@ void Termination_By_NoMoreEmptySpace (player player1, player player2 , disk boar
             printf("The winner is %s\n",player2.name);
         }
         
+        //Call the print final result
         save_final_result (player1, player2);
+        
+        //After terminated control the 
+        Termination_Result += 1;
+    }
+    return Termination_Result;
+}
+
+//Sub-function of print the final result to a .txt file
+void save_final_result (player player1, player player2)
+{
+    FILE * cfPtr;
+    
+    if ((cfPtr=fopen("GameResult.txt", "w"))==NULL)
+    {
+        printf("Fail to open file GameResult.txt\n");
+    }
+    else
+    {
+        fprintf(cfPtr,"Player1 %s, points: %d\n",player1.name,player1.points);
+        fprintf(cfPtr,"Player2 %s, points: %d\n",player2.name,player2.points);
+        
+        if (player1.points > player2.points)
+        {
+            fprintf(cfPtr,"The winner is %s\n\n",player1.name);
+        }
+        else if (player2.points > player1.points)
+        {
+            fprintf(cfPtr,"The winner is %s\n\n",player2.name);
+        }
+        else
+        {
+            fprintf(cfPtr,"This game is tied\n\n");
+        }
+        
+        fclose(cfPtr);
     }
 }
 //This file is create and written by Jiazheng Li 16212162
