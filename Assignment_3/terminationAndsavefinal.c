@@ -137,7 +137,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Column_Checker -= 1;
                             while (Column_Checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker][Column_Checker-1].type == defiened_colour)
                                     {
@@ -153,7 +153,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             while (Column_Checker > 0 && Row_Checker < 8)
                             {
 
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker+1][Column_Checker-1].type == defiened_colour)
                                     {
@@ -168,7 +168,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Row_Checker -= 1;
                             while (Row_Checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker+1][Column_Checker].type == defiened_colour)
                                     {
@@ -183,7 +183,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Column_Checker += 1;
                             while (Column_Checker < 8 && Row_Checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker+1][Column_Checker-1].type == defiened_colour)
                                     {
@@ -198,7 +198,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Column_Checker += 1;
                             while (Column_Checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker][Column_Checker-1].type == defiened_colour)
                                     {
@@ -213,7 +213,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Column_Checker += 1;
                             while (Column_Checker < 8 && Row_Checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker-1][Column_Checker+1].type == defiened_colour)
                                     {
@@ -228,7 +228,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Row_Checker -= 1;
                             while (Row_Checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker-1][Column_Checker].type == defiened_colour)
                                     {
@@ -243,7 +243,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                             Column_Checker -= 1;
                             while (Column_Checker > 0 && Row_Checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour)
+                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
                                 {
                                     if (board[Row_Checker-1][Column_Checker-1].type == defiened_colour)
                                     {
