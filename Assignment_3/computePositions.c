@@ -23,37 +23,31 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
         for(int j = 0; j <=7; j++){
           if(board[i][j].type == BLACK){
             if(board[i][j+1].type == WHITE && board[i][j+2].type == NONE){
-              //printf("OPA, MAMA 1 \n");
               row[counter] = i;
               col[counter] = j+2;
               counter++;
             }
             else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == NONE){
-              printf("OPA, MAMA 2\n");
               row[counter] = i;
               col[counter] = j + 3;
               counter++;
             }
             else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == NONE){
-              printf("OPA, MAMA 3\n");
               row[counter] = i;
               col[counter] = j + 4;
               counter++;
             }
             else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == NONE){
-              printf("OPA, MAMA 4\n");
               row[counter] = i;
               col[counter] = j + 5;
               counter++;
             }
             else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == WHITE && board[i][j+6].type == NONE){
-              printf("OPA, MAMA 5\n");
               row[counter] = i;
               col[counter] = j + 6;
               counter++;
             }
             else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == WHITE && board[i][j+6].type == WHITE && board[i][j+7].type == NONE){
-              printf("OPA, MAMA 6\n");
               row[counter] = i;
               col[counter] = j + 7;
               counter++;
@@ -67,37 +61,31 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
       for(int j = 7; j >=0; j--){
         if(board[i][j].type == BLACK){
           if(board[i][j-1].type == WHITE && board[i][j-2].type == NONE){
-            //printf("OPA, MAMA 99 \n");
             row[counter] = i;
             col[counter] = j - 2;
             counter++;
           }
           else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == NONE){
-            printf("OPA, MAMA 98\n");
             row[counter] = i;
             col[counter] = j - 3;
             counter++;
           }
           else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == NONE){
-            printf("OPA, MAMA 97\n");
             row[counter] = i;
             col[counter] = j - 4;
             counter++;
           }
           else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == NONE){
-            printf("OPA, MAMA 1234\n");
             row[counter] = i;
             col[counter] = j - 5;
             counter++;
           }
           else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == WHITE && board[i][j-6].type == NONE){
-            printf("OPA, MAMA 1234\n");
             row[counter] = i;
             col[counter] = j - 6;
             counter++;
           }
           else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == WHITE && board[i][j-6].type == WHITE && board[i][j-7].type == NONE){
-            printf("OPA, MAMA 1234\n");
             row[counter] = i;
             col[counter] = j - 7;
             counter++;
@@ -111,37 +99,31 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
       for(int j = 0; j <=7; j++){
         if(board[j][i].type == BLACK){
           if(board[j+1][i].type == WHITE && board[j+2][i].type == NONE){
-            //printf("OPA, MAMA 1 \n");
             row[counter] = j + 2;
             col[counter] = i;
             counter++;
           }
           else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == NONE){
-            printf("OPA, MAMA 2\n");
             row[counter] = j + 3;
             col[counter] = i;
             counter++;
           }
           else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == NONE){
-            printf("OPA, MAMA 3\n");
             row[counter] = j + 4;
             col[counter] = i;
             counter++;
           }
           else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == NONE){
-            printf("OPA, MAMA 4\n");
             row[counter] = j + 5;
             col[counter] = i;
             counter++;
           }
           else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == WHITE && board[j+6][i].type == NONE){
-            printf("OPA, MAMA 5\n");
             row[counter] = j + 6;
             col[counter] = i;
             counter++;
           }
           else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == WHITE && board[j+6][i].type == WHITE && board[j+7][i].type == NONE){
-            printf("OPA, MAMA 6\n");
             row[counter] = j + 7;
             col[counter] = i;
             counter++;
@@ -155,37 +137,36 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
       for(int j = 7; j >= 0; j--){
         if(board[j][i].type == BLACK){
           if(board[j-1][i].type == WHITE && board[j-2][i].type == NONE){
-            //printf("OPA, MAMA 1 \n");
             row[counter] = j - 2;
             col[counter] = i;
             counter++;
           }
           else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == NONE){
-            printf("OPA, MAMA 2\n");
+
             row[counter] = j - 3;
             col[counter] = i;
             counter++;
           }
           else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == NONE){
-            printf("OPA, MAMA 3\n");
+
             row[counter] = j - 4;
             col[counter] = i;
             counter++;
           }
           else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == NONE){
-            printf("OPA, MAMA 4\n");
+
             row[counter] = j - 5;
             col[counter] = i;
             counter++;
           }
           else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == WHITE && board[j-6][i].type == NONE){
-            printf("OPA, MAMA 5\n");
+
             row[counter] = j - 6;
             col[counter] = i;
             counter++;
           }
           else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == WHITE && board[j-6][i].type == WHITE && board[j-7][i].type == NONE){
-            printf("OPA, MAMA 6\n");
+
             row[counter] = j - 7;
             col[counter] = i;
             counter++;
@@ -199,37 +180,36 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
           for(int j = 0; j <=7; j++){
             if(board[i][j].type == BLACK){
               if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == NONE){
-                //printf("OPA, MAMA 1 \n");
                 row[counter] = i - 2;
                 col[counter] = j + 2;
                 counter++;
               }
               else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == NONE){
-                printf("OPA, MAMA 2\n");
+
                 row[counter] = i - 3;
                 col[counter] = j + 3;
                 counter++;
               }
               else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == NONE){
-                printf("OPA, MAMA 3\n");
+
                 row[counter] = i - 4;
                 col[counter] = j + 4;
                 counter++;
               }
               else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == NONE){
-                printf("OPA, MAMA 4\n");
+
                 row[counter] = i - 5;
                 col[counter] = j + 5;
                 counter++;
               }
               else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == WHITE && board[i-6][j+6].type == NONE){
-                printf("OPA, MAMA 5\n");
+
                 row[counter] = i - 6;
                 col[counter] = j + 6;
                 counter++;
               }
               else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == WHITE && board[i-6][j+6].type == WHITE && board[i-7][j+7].type == NONE){
-                printf("OPA, MAMA 6\n");
+
                 row[counter] = i - 7;
                 col[counter] = j + 7;
                 counter++;
@@ -243,37 +223,36 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
               for(int j = 7; j >= 0; j--){
                 if(board[i][j].type == BLACK){
                   if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == NONE){
-                    //printf("OPA, MAMA 1 \n");
                     row[counter] = i + 2;
                     col[counter] = j - 2;
                     counter++;
                   }
                   else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == NONE){
-                    printf("OPA, MAMA 2\n");
+
                     row[counter] = i + 3;
                     col[counter] = j - 3;
                     counter++;
                   }
                   else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == NONE){
-                    printf("OPA, MAMA 3\n");
+
                     row[counter] = i + 4;
                     col[counter] = j - 4;
                     counter++;
                   }
                   else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == NONE){
-                    printf("OPA, MAMA 4\n");
+
                     row[counter] = i + 5;
                     col[counter] = j - 5;
                     counter++;
                   }
                   else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == WHITE && board[i+6][j-6].type == NONE){
-                    printf("OPA, MAMA 5\n");
+
                     row[counter] = i + 6;
                     col[counter] = j - 6;
                     counter++;
                   }
                   else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == WHITE && board[i+6][j-6].type == WHITE && board[i+7][j-7].type == NONE){
-                    printf("OPA, MAMA 6\n");
+
                     row[counter] = i + 7;
                     col[counter] = j - 7;
                     counter++;
@@ -287,37 +266,36 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
                   for(int j = 0; j <=7; j++){
                     if(board[i][j].type == BLACK){
                       if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == NONE){
-                        //printf("OPA, MAMA 1 \n");
                         row[counter] = i + 2;
                         col[counter] = j + 2;
                         counter++;
                       }
                       else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == NONE){
-                        printf("OPA, MAMA 2\n");
+
                         row[counter] = i + 3;
                         col[counter] = j + 3;
                         counter++;
                       }
                       else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == NONE){
-                        printf("OPA, MAMA 3\n");
+
                         row[counter] = i + 4;
                         col[counter] = j + 4;
                         counter++;
                       }
                       else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == NONE){
-                        printf("OPA, MAMA 4\n");
+
                         row[counter] = i + 5;
                         col[counter] = j + 5;
                         counter++;
                       }
                       else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == WHITE && board[i+6][j+6].type == NONE){
-                        printf("OPA, MAMA 5\n");
+
                         row[counter] = i + 6;
                         col[counter] = j + 6;
                         counter++;
                       }
                       else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == WHITE && board[i+6][j+6].type == WHITE && board[i+7][j+7].type == NONE){
-                        printf("OPA, MAMA 6\n");
+
                         row[counter] = i + 7;
                         col[counter] = j + 7;
                         counter++;
@@ -331,37 +309,31 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
                       for(int j = 7; j >= 0; j--){
                         if(board[i][j].type == BLACK){
                           if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == NONE){
-                            //printf("OPA, MAMA 1 \n");
                             row[counter] = i - 2;
                             col[counter] = j - 2;
                             counter++;
                           }
                           else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == NONE){
-                            printf("OPA, MAMA 2\n");
                             row[counter] = i - 3;
                             col[counter] = j - 3;
                             counter++;
                           }
                           else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == NONE){
-                            printf("OPA, MAMA 3\n");
                             row[counter] = i - 4;
                             col[counter] = j - 4;
                             counter++;
                           }
                           else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == NONE){
-                            printf("OPA, MAMA 4\n");
                             row[counter] = i - 5;
                             col[counter] = j - 5;
                             counter++;
                           }
                           else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == WHITE && board[i-6][j-6].type == NONE){
-                            printf("OPA, MAMA 5\n");
                             row[counter] = i - 6;
                             col[counter] = j - 6;
                             counter++;
                           }
                           else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == WHITE && board[i-6][j-6].type == WHITE && board[i-7][j-7].type == NONE){
-                            printf("OPA, MAMA 6\n");
                             row[counter] = i - 7;
                             col[counter] = j - 7;
                             counter++;
