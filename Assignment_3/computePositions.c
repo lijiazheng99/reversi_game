@@ -359,10 +359,10 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
   printf("\n\n? ");
   scanf("%d", &userChoice);
 
-  if(userChoice==2){
-    printf("[%d][%d]\n", row[userChoice-1], col[userChoice-1]);
-  }
+  //if(userChoice==2){
+  //  printf("[%d][%d]\n", row[userChoice-1], col[userChoice-1]);
+  //}
 
-  players_placement(BLACK,row[userChoice], col[userChoice], board); 
+  players_placement(BLACK, row[userChoice-1], col[userChoice-1], board);
 
 }
