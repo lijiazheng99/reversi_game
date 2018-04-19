@@ -3,6 +3,7 @@
 #include <string.h>
 #include "disksAndPlayers.h"
 #include "computePositions.h"
+#include "disksPlacement.h"
 #define SIZE 8
 
 void computePositions(disk board[SIZE][SIZE], player player1, player player2){
@@ -361,5 +362,7 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
   if(userChoice==2){
     printf("[%d][%d]\n", row[userChoice-1], col[userChoice-1]);
   }
+
+  players_placement(BLACK,row[0], col[0], board); 
 
 }
