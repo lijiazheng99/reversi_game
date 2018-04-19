@@ -29,4 +29,4 @@
 
     void printBoard(disk board [SIZE][SIZE]);
 
-    void computePositions(disk board [SIZE][SIZE]); 
+    void computePositions(disk board [SIZE][SIZE], player player1, player player2);
