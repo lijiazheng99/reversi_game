@@ -363,6 +363,6 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
     printf("[%d][%d]\n", row[userChoice-1], col[userChoice-1]);
   }
 
-  players_placement(BLACK,row[0], col[0], board); 
+  players_placement(BLACK,row[userChoice], col[userChoice], board); 
 
 }
