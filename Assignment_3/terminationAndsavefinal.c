@@ -117,146 +117,202 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
     //Counter for count whole valiable position
     int Valiable_postion_counter = 0;
     
-    //Two for loop to check each postion on the board
-    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
+   //Two for loop to check possible postion for every place on the board
+    for (int Row_Counter = 0; Row_Counter < 8; Row_Counter++)
     {
-        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
+        for (int Column_Counter = 0; Column_Counter < 8; Column_Counter++)
         {
-            //Deriction Counter to make checker turn to different row and column
-            for (int Derict_Counter = 0; Derict_Counter < 8; Derict_Counter++)
+            //check postion avaliablity
+            if (board[Row_Counter][Column_Counter].type == NONE)
             {
-                //Make sure the postion is empty
-                if (board[Row_Counter][Column_Counter].type == NONE)
+                //diriction counter
+                for (int dirction_counter = 0; dirction_counter < 8; dirction_counter++)
                 {
-                    //Row and Column checker to move disks to check the position
-                    int Row_Checker = Row_Counter, Column_Checker = Column_Counter;
+                    int Row_checker = Row_Counter, Column_checker = Column_Counter;
                     
-                    switch (Derict_Counter)
+                    switch (dirction_counter)
                     {
                         case 0:
-                            Column_Checker -= 1;
-                            while (Column_Checker > 0)
+                            Column_checker -= 1;
+                            while (Column_checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker][Column_Checker-1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker][Column_checker-1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Column_Checker--;
+                                Column_checker--;
                             }
                             break;
                         case 1:
-                            Row_Checker += 1;
-                            Column_Checker -= 1;
-                            while (Column_Checker > 0 && Row_Checker < 8)
+                            Row_checker += 1;
+                            Column_checker -= 1;
+                            while (Row_checker < 8 && Column_checker > 0)
                             {
-
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker+1][Column_Checker-1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker+1][Column_checker-1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker++;
-                                Column_Checker--;
+                                Row_checker++;
+                                Column_checker--;
                             }
                             break;
                         case 2:
-                            Row_Checker -= 1;
-                            while (Row_Checker < 8)
+                            Row_checker += 1;
+                            while (Row_checker < 8 )
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker+1][Column_Checker].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker+1][Column_checker].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker++;
+                                Row_checker++;
                             }
                             break;
                         case 3:
-                            Row_Checker += 1;
-                            Column_Checker += 1;
-                            while (Column_Checker < 8 && Row_Checker < 8)
+                            Row_checker += 1;
+                            Column_checker += 1;
+                            while (Row_checker < 8 && Column_checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker+1][Column_Checker-1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker+1][Column_checker+1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker++;
-                                Column_Checker++;
+                                Row_checker++;
+                                Column_checker++;
                             }
                             break;
                         case 4:
-                            Column_Checker += 1;
-                            while (Column_Checker < 8)
+                            Column_checker += 1;
+                            while (Column_checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker][Column_Checker-1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker][Column_checker+1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Column_Checker++;
+                                Column_checker++;
                             }
                             break;
                         case 5:
-                            Row_Checker -= 1;
-                            Column_Checker += 1;
-                            while (Column_Checker < 8 && Row_Checker > 0)
+                            Row_checker -= 1;
+                            Column_checker += 1;
+                            while (Row_checker > 0 && Column_checker < 8)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker-1][Column_Checker+1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker-1][Column_checker+1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker--;
-                                Column_Checker++;
+                                Row_checker--;
+                                Column_checker++;
                             }
                             break;
                         case 6:
-                            Row_Checker -= 1;
-                            while (Row_Checker > 0)
+                            Row_checker -= 1;
+                            while (Row_checker > 0 )
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker-1][Column_Checker].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker-1][Column_checker].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker--;
+                                Row_checker--;
                             }
                             break;
                         case 7:
-                            Row_Checker -= 1;
-                            Column_Checker -= 1;
-                            while (Column_Checker > 0 && Row_Checker > 0)
+                            Row_checker -= 1;
+                            Column_checker -= 1;
+                            while (Row_checker > 0 && Column_checker > 0)
                             {
-                                if (board[Row_Checker][Column_Checker].type != defiened_colour && board[Row_Checker][Column_Checker].type != NONE)
+                                if (board[Row_checker][Column_checker].type == NONE)
                                 {
-                                    if (board[Row_Checker-1][Column_Checker-1].type == defiened_colour)
+                                    break;
+                                }
+                                else if(board[Row_checker][Column_checker].type != NONE)
+                                {
+                                    if (board[Row_checker][Column_checker].type != defiened_colour)
                                     {
-                                        Valiable_postion_counter += 1;
+                                        if (board[Row_checker-1][Column_checker-1].type == defiened_colour)
+                                        {
+                                            Valiable_postion_counter += 1;
+                                        }
                                     }
                                 }
-                                Row_Checker--;
-                                Column_Checker--;
+                                Row_checker--;
+                                Column_checker--;
                             }
                             break;
                     }
                 }
             }
+            //DeBug:
+            //printf("%c %d |%d|\n",Row_Counter+'a',Column_Counter+1,Valiable_postion_counter);
         }
     }
     return Valiable_postion_counter;
