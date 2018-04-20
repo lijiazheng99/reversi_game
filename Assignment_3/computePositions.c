@@ -353,7 +353,7 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
   int choice = 1;
 
   /* asking the player where he/she'd like to move */
-  printf("\n[BLACK] Choose your next move: \n");
+  printf("\n<%s> choose your next move: \n", player1.name);
   for(int print = 0; print < counter; print++){
     if(row[print] != -1 && col[print] != -1){
       printf("%d. (%d, %d)\t", choice, row[print]+1, col[print]+1);
@@ -698,7 +698,7 @@ void computePositions(disk board[SIZE][SIZE], player player1, player player2){
 
 
 int choice1 = 1;
-  printf("\n[WHITE] Choose your next move: \n");
+  printf("\n<%s> Choose your next move: \n", player2.name);
   for(int print = 0; print < counter; print++){
     if(row1[print] != -1 && col1[print] != -1){
       printf("%d. (%d, %d)\t", choice1, row1[print]+1, col1[print]+1);
