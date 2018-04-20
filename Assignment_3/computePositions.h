@@ -1,4 +1,5 @@
-  #define SIZE 8
+#define SIZE 8
 
+void computePositions_Black (disk board[SIZE][SIZE], player player1);
 
-  void computePositions(disk board[SIZE][SIZE], player player1, player player2);
+void computePositions_White (disk board[SIZE][SIZE], player player2);
