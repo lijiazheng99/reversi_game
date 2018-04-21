@@ -14,7 +14,7 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
 {
     //Termination result for control the while loop in main function
     int Termination_Control = 0;
-    
+
     /*Count board empty spcace*/
     int Empty_Sapce_Counter = 64;
 
@@ -29,17 +29,17 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
             }
         }
     }
-    
+
     /*First situation: termination by no possible moves*/
     if (Empty_Sapce_Counter > 0)
     {
         //Counter to collect possible moves
         int Possible_position_check_counter = 0;
-        
+
         //Collect possible moves from each person
         Possible_position_check_counter += Possible_position_check(player1.type, board);
         Possible_position_check_counter += Possible_position_check(player2.type, board);
-        
+
         //one player don't have possible moves, pass to anthoer player
         if (Possible_position_check(player1.type, board) == 0)
         {
@@ -49,7 +49,7 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
                 Termination_Control += 1;
             }
         }
-        
+
         //one player don't have possible moves, pass to anthoer player
         else if (Possible_position_check(player2.type, board) == 0)
         {
@@ -59,14 +59,14 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
                 Termination_Control += 1;
             }
         }
-        
+
         else if (Possible_position_check_counter == 0)
         {
             printf("Game is over, there is no possible moves for both players.\n");
-            
+
             printf("Player1 %s, points %d;\n",player1.name,player1.points);
             printf("Player2 %s, points %d;\n",player2.name,player1.points);
-            
+
             if(player1.points > player2.points)
             {
                 printf("The winner is %s\n",player1.name);
@@ -75,23 +75,23 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
             {
                 printf("The winner is %s\n",player2.name);
             }
-            
+
             //Call the print final result
             Save_final_result (player1, player2);
-            
+
             //After terminated control the
             Termination_Control += 2;
         }
     }
-    
+
     /*Second situation: termination by no empty space*/
     else if (Empty_Sapce_Counter == 0)
     {
         printf("Game is over, there is no empty space.\n");
-        
+
         printf("Player1 %s, points %d;\n",player1.name,player1.points);
         printf("Player2 %s, points %d;\n",player2.name,player1.points);
-        
+
         if(player1.points > player2.points)
         {
             printf("The winner is %s\n",player1.name);
@@ -100,14 +100,14 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE])
         {
             printf("The winner is %s\n",player2.name);
         }
-        
+
         //Call the print final result
         Save_final_result (player1, player2);
-        
-        //After terminated control the 
+
+        //After terminated control the
         Termination_Control += 2;
     }
-    
+
     return Termination_Control;
 }
 
@@ -116,7 +116,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
 {
     //Counter for count whole valiable position
     int Valiable_postion_counter = 0;
-    
+
    //Two for loop to check possible postion for every place on the board
     for (int Row_Counter = 0; Row_Counter < 8; Row_Counter++)
     {
@@ -129,7 +129,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 for (int dirction_counter = 0; dirction_counter < 8; dirction_counter++)
                 {
                     int Row_checker = Row_Counter, Column_checker = Column_Counter;
-                    
+
                     switch (dirction_counter)
                     {
                         case 0:
@@ -322,7 +322,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
 void Save_final_result (player player1, player player2)
 {
     FILE * cfPtr;
-    
+
     if ((cfPtr=fopen("GameResult.txt", "w"))==NULL)
     {
         printf("Fail to open file GameResult.txt\n");
@@ -331,7 +331,7 @@ void Save_final_result (player player1, player player2)
     {
         fprintf(cfPtr,"Player1 %s, points: %d\n",player1.name,player1.points);
         fprintf(cfPtr,"Player2 %s, points: %d\n",player2.name,player2.points);
-        
+
         if (player1.points > player2.points)
         {
             fprintf(cfPtr,"The winner is %s\n\n",player1.name);
@@ -344,7 +344,7 @@ void Save_final_result (player player1, player player2)
         {
             fprintf(cfPtr,"This game is tied\n\n");
         }
-        
+
         fclose(cfPtr);
     }
 }

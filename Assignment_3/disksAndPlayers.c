@@ -25,7 +25,6 @@ void initializePlayers(player player1, player player2){
     // Assign colours and points to player 2
     player2.type = WHITE;
     player2.points = 2;
-
 }
 
 void initializeBoard(disk board [SIZE][SIZE]){

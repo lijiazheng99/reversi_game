@@ -424,6 +424,15 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
     int userChoice;
     int nmbr = 1;
 
+    for(int i = 0; i < counter; i++){
+      for(int j = 1; j < counter; j++){
+        if(row[i] == row[i+j] && col[i] == col[i+j]){
+          row[i+j] = -1;
+          col[i+j] = -1;
+        }
+      }
+    }
+
     /* asking the player where he/she'd like to move */
     printf("\n<%s> choose your next move: \n", player1.name);
     for(int print = 0; print < counter; print++){
@@ -435,10 +444,6 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
 
     printf("\n\n? ");
     scanf("%d", &userChoice);
-
-    //if(userChoice==2){
-    //  printf("[%d][%d]\n", row1[userChoice-1], col1[userChoice-1]);
-    //}
 
     players_placement(BLACK, row[userChoice-1], col[userChoice-1], board);
 }
@@ -861,6 +866,15 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
         }
     }
 
+    for(int i = 0; i < counter1; i++){
+      for(int j = 1; j < counter1; j++){
+        if(row1[i] == row1[i+j] && col1[i] == col1[i+j]){
+          row1[i+j] = -1;
+          col1[i+j] = -1;
+        }
+      }
+    }
+
     int nmbr1 = 1;
     printf("\n<%s> Choose your next move: \n", player2.name);
     for(int print = 0; print < counter1; print++){
@@ -874,8 +888,5 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
     printf("\n\n? ");
     scanf("%d", &userChoice1);
 
-
     players_placement(WHITE, row1[userChoice1-1], col1[userChoice1-1], board);
-
-
 }
