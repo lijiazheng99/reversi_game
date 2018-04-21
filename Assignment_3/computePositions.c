@@ -9,13 +9,13 @@
 void computePositions_Black (disk board[SIZE][SIZE], player player1)
 {
     /* variables to save col1umn and row1 number */
-    int row[10];
-    int col[10];
+    int row[30];
+    int col[30];
     int counter = 0;
 
     /* initializing all elements to -1 for better usage later on
      in the program  */
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 30; i++){
         row[i] = -1;
         col[i] = -1;
     }
@@ -457,13 +457,13 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
 void computePositions_White (disk board[SIZE][SIZE], player player2)
 {
     /* variables to save col1umn and row1 number */
-    int row1[10];
-    int col1[10];
+    int row1[30];
+    int col1[30];
     int counter1 = 0;
 
     /* initializing all elements to -1 for better usage later on
      in the program  */
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 30; i++){
         row1[i] = -1;
         col1[i] = -1;
     }
