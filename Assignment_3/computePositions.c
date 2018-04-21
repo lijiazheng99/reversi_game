@@ -8,12 +8,12 @@
 
 void computePositions_Black (disk board[SIZE][SIZE], player player1)
 {
-    /* variables to save col1umn and row1 number */
+    /* variables to save column and row number */
     int row[30];
     int col[30];
     int counter = 0;
 
-    /* initializing all elements to -1 for better usage later on
+    /* initializing all elements to 10000 for better usage later on
      in the program  */
     for(int i = 0; i < 30; i++){
         row[i] = -1;
@@ -443,12 +443,14 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
         }
     }
 
-    /* taking user's choice */
-    printf("\n\n? ");
-    scanf("%d", &userChoice);
+      /* taking user's choice */
+      printf("\n\n? ");
+      scanf("%d", &userChoice);
 
-    /* passing the information to the disk-placement function */
-    players_placement(BLACK, row[userChoice-1], col[userChoice-1], board);
+      /* passing the information to the disk-placement function */
+      players_placement(BLACK, row[userChoice-1], col[userChoice-1], board);
+
+
 }
 
 
@@ -456,7 +458,7 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
 
 void computePositions_White (disk board[SIZE][SIZE], player player2)
 {
-    /* variables to save col1umn and row1 number */
+    /* variables to save column and row number */
     int row1[30];
     int col1[30];
     int counter1 = 0;
@@ -881,18 +883,19 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
     /* displaying the positions available to the user */
     int nmbr1 = 1;
     printf("\n<%s> Choose your next move: \n", player2.name);
-    for(int print = 0; print < counter1; print++){
-        if(row1[print] != -1 && col1[print] != -1){
-            printf("%d. (%d, %d)\t", nmbr1, row1[print]+1, col1[print]+1);
+    for(int print1 = 0; print1 < counter1; print1++){
+        if(row1[print1] != -1 && col1[print1] != -1){
+            printf("%d. (%d, %d)\t", nmbr1, row1[print1]+1, col1[print1]+1);
             nmbr1++;
         }
     }
 
-    /* taking user's choice */
-    int userChoice1;
-    printf("\n\n? ");
-    scanf("%d", &userChoice1);
+      /* taking user's choice */
+      int userChoice1;
+      printf("\n\n? ");
+      scanf("%d", &userChoice1);
 
-    /* passing the information to the disk-placement function */
-    players_placement(WHITE, row1[userChoice1-1], col1[userChoice1-1], board);
+      /* passing the information to the disk-placement function */
+      players_placement(WHITE, row1[userChoice1-1], col1[userChoice1-1], board);
+
 }
