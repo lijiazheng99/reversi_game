@@ -502,45 +502,35 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
 
 /*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
 /*Sub-function for renew points by count different color of disks*/
-//void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
-//{
-//    //Two counter for different color of disks
-//    int White_Counter = 0,Black_Counter = 0;
-//    
-//    //for loop for counting
-//    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
-//    {
-//        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
-//        {
-//            //If board is not empty, count the disk
-//            if (board[Row_Counter][Column_Counter].type != NONE)
-//            {
-//                //count white disks
-//                if(board[Row_Counter][Column_Counter].type == WHITE)
-//                {
-//                    White_Counter++;
-//                }
-//                //count black disks
-//                if(board[Row_Counter][Column_Counter].type == BLACK)
-//                {
-//                    Black_Counter++;
-//                }
-//            }
-//        }
-//    }
-//    
-//    //Renew player's points after reversi
-//    if (player1.type == WHITE)
-//    {
-//        player1.points = White_Counter;
-//        player2.points = Black_Counter;
-//    }
-//    
-//    else if (player1.type == BLACK)
-//    {
-//        player1.points = Black_Counter;
-//        player2.points = White_Counter;
-//    }
-//    
-//}
+void Renew_Player_Points (player *player1, player *player2, disk board[SIZE][SIZE])
+{
+    //Two counter for different color of disks
+    int White_Counter = 0,Black_Counter = 0;
+    
+    //for loop for counting
+    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
+    {
+        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
+        {
+            //If board is not empty, count the disk
+            if (board[Row_Counter][Column_Counter].type != NONE)
+            {
+                //count white disks
+                if(board[Row_Counter][Column_Counter].type == WHITE)
+                {
+                    White_Counter++;
+                }
+                //count black disks
+                if(board[Row_Counter][Column_Counter].type == BLACK)
+                {
+                    Black_Counter++;
+                }
+            }
+        }
+    }
+    
+    player1->points = Black_Counter;
+    player2->points = White_Counter;
+    
+}
 //This file is create and written by Jiazheng Li 16212162
