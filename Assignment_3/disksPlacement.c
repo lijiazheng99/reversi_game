@@ -69,7 +69,7 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
         //"Row_check" and "Column_check" are based on data of row and column to doing decrease and increse operation to check every postion
         int Row_check = row;
         int Column_check = column;
-        
+
         //Switch to defferent color
         switch (defiened_colour)
         {
@@ -86,9 +86,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[row][Column_check].type==WHITE)
+                        if (board[row][Column_check].type==BLACK)
                         {
-                            if (board[row][Column_check+1].type==BLACK)
+                            if (board[row][Column_check-1].type==WHITE)
                             {
                                 while (Column_check != column)
                                 {
@@ -105,15 +105,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 1:
                     Column_check -= 1;
                     Row_check += 1;
-                    while (Column_check > 0 && Row_check < 9)
+                    while (Column_check > 0 && Row_check < 8)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==WHITE)
+                        if (board[Row_check][Column_check].type==BLACK)
                         {
-                            if (board[Row_check-1][Column_check+1].type==BLACK)
+                            if (board[Row_check+1][Column_check-1].type==WHITE)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -131,15 +131,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                     /*Deriction 2: check right*/
                 case 2:
                     Row_check += 1;
-                    while (Row_check < 9)
+                    while (Row_check < 8)
                     {
                         if (board[Row_check][column].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][column].type==WHITE)
+                        if (board[Row_check][column].type==BLACK)
                         {
-                            if (board[Row_check-1][column].type==BLACK)
+                            if (board[Row_check+1][column].type==WHITE)
                             {
                                 while (Row_check != row)
                                 {
@@ -156,15 +156,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 3:
                     Column_check += 1;
                     Row_check += 1;
-                    while (Column_check < 9 && Row_check < 9)
+                    while (Column_check < 8 && Row_check < 8)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==WHITE)
+                        if (board[Row_check][Column_check].type==BLACK)
                         {
-                            if (board[Row_check-1][Column_check-1].type==BLACK)
+                            if (board[Row_check+1][Column_check+1].type==WHITE)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -182,15 +182,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                     /*Deriction 4: check down*/
                 case 4:
                     Column_check += 1;
-                    while (Column_check < 9)
+                    while (Column_check < 8)
                     {
                         if (board[row][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[row][Column_check].type==WHITE)
+                        if (board[row][Column_check].type==BLACK)
                         {
-                            if (board[row][Column_check-1].type==BLACK)
+                            if (board[row][Column_check+1].type==WHITE)
                             {
                                 while (Column_check != column)
                                 {
@@ -207,15 +207,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 5:
                     Column_check += 1;
                     Row_check -= 1;
-                    while (Column_check < 9 && Row_check > 0)
+                    while (Column_check < 8 && Row_check > 0)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==WHITE)
+                        if (board[Row_check][Column_check].type==BLACK)
                         {
-                            if (board[Row_check+1][Column_check-1].type==BLACK)
+                            if (board[Row_check-1][Column_check+1].type==WHITE)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -239,9 +239,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[Row_check][column].type==WHITE)
+                        if (board[Row_check][column].type==BLACK)
                         {
-                            if (board[Row_check+1][column].type==BLACK)
+                            if (board[Row_check-1][column].type==WHITE)
                             {
                                 while (Row_check != row)
                                 {
@@ -264,9 +264,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==WHITE)
+                        if (board[Row_check][Column_check].type==BLACK)
                         {
-                            if (board[Row_check+1][Column_check+1].type==BLACK)
+                            if (board[Row_check-1][Column_check-1].type==WHITE)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -296,9 +296,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[row][Column_check].type==BLACK)
+                        if (board[row][Column_check].type==WHITE)
                         {
-                            if (board[row][Column_check+1].type==WHITE)
+                            if (board[row][Column_check-1].type==BLACK)
                             {
                                 while (Column_check != column)
                                 {
@@ -315,15 +315,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 1:
                     Column_check -= 1;
                     Row_check += 1;
-                    while (Column_check > 0 && Row_check < 9)
+                    while (Column_check > 0 && Row_check < 8)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==BLACK)
+                        if (board[Row_check][Column_check].type==WHITE)
                         {
-                            if (board[Row_check-1][Column_check+1].type==WHITE)
+                            if (board[Row_check+1][Column_check-1].type==BLACK)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -341,15 +341,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                     /*Deriction 2: check right*/
                 case 2:
                     Row_check += 1;
-                    while (Row_check < 9)
+                    while (Row_check < 8)
                     {
                         if (board[Row_check][column].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][column].type==BLACK)
+                        if (board[Row_check][column].type==WHITE)
                         {
-                            if (board[Row_check-1][column].type==WHITE)
+                            if (board[Row_check+1][column].type==BLACK)
                             {
                                 while (Row_check != row)
                                 {
@@ -366,15 +366,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 3:
                     Column_check += 1;
                     Row_check += 1;
-                    while (Column_check < 9 && Row_check < 9)
+                    while (Column_check < 8 && Row_check < 8)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==BLACK)
+                        if (board[Row_check][Column_check].type==WHITE)
                         {
-                            if (board[Row_check-1][Column_check-1].type==WHITE)
+                            if (board[Row_check+1][Column_check+1].type==BLACK)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -392,15 +392,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                     /*Deriction 4: check down*/
                 case 4:
                     Column_check += 1;
-                    while (Column_check < 9)
+                    while (Column_check < 8)
                     {
                         if (board[row][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[row][Column_check].type==BLACK)
+                        if (board[row][Column_check].type==WHITE)
                         {
-                            if (board[row][Column_check-1].type==WHITE)
+                            if (board[row][Column_check+1].type==BLACK)
                             {
                                 while (Column_check != column)
                                 {
@@ -417,15 +417,15 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                 case 5:
                     Column_check += 1;
                     Row_check -= 1;
-                    while (Column_check < 9 && Row_check > 0)
+                    while (Column_check < 8 && Row_check > 0)
                     {
                         if (board[Row_check][Column_check].type==NONE)
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==BLACK)
+                        if (board[Row_check][Column_check].type==WHITE)
                         {
-                            if (board[Row_check+1][Column_check-1].type==WHITE)
+                            if (board[Row_check-1][Column_check+1].type==BLACK)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -449,9 +449,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[Row_check][column].type==BLACK)
+                        if (board[Row_check][column].type==WHITE)
                         {
-                            if (board[Row_check+1][column].type==WHITE)
+                            if (board[Row_check-1][column].type==BLACK)
                             {
                                 while (Row_check != row)
                                 {
@@ -474,9 +474,9 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
                         {
                             break;
                         }
-                        if (board[Row_check][Column_check].type==BLACK)
+                        if (board[Row_check][Column_check].type==WHITE)
                         {
-                            if (board[Row_check+1][Column_check+1].type==WHITE)
+                            if (board[Row_check-1][Column_check-1].type==BLACK)
                             {
                                 while (Column_check != column && Row_check != row)
                                 {
@@ -502,45 +502,45 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
 
 /*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
 /*Sub-function for renew points by count different color of disks*/
-void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
-{
-    //Two counter for different color of disks
-    int White_Counter = 0,Black_Counter = 0;
-    
-    //for loop for counting
-    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
-    {
-        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
-        {
-            //If board is not empty, count the disk
-            if (board[Row_Counter][Column_Counter].type != NONE)
-            {
-                //count white disks
-                if(board[Row_Counter][Column_Counter].type == WHITE)
-                {
-                    White_Counter++;
-                }
-                //count black disks
-                if(board[Row_Counter][Column_Counter].type == BLACK)
-                {
-                    Black_Counter++;
-                }
-            }
-        }
-    }
-    
-    //Renew player's points after reversi
-    if (player1.type == WHITE)
-    {
-        player1.points = White_Counter;
-        player2.points = Black_Counter;
-    }
-    
-    else if (player1.type == BLACK)
-    {
-        player1.points = Black_Counter;
-        player2.points = White_Counter;
-    }
-    
-}
+//void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE])
+//{
+//    //Two counter for different color of disks
+//    int White_Counter = 0,Black_Counter = 0;
+//    
+//    //for loop for counting
+//    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
+//    {
+//        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
+//        {
+//            //If board is not empty, count the disk
+//            if (board[Row_Counter][Column_Counter].type != NONE)
+//            {
+//                //count white disks
+//                if(board[Row_Counter][Column_Counter].type == WHITE)
+//                {
+//                    White_Counter++;
+//                }
+//                //count black disks
+//                if(board[Row_Counter][Column_Counter].type == BLACK)
+//                {
+//                    Black_Counter++;
+//                }
+//            }
+//        }
+//    }
+//    
+//    //Renew player's points after reversi
+//    if (player1.type == WHITE)
+//    {
+//        player1.points = White_Counter;
+//        player2.points = Black_Counter;
+//    }
+//    
+//    else if (player1.type == BLACK)
+//    {
+//        player1.points = Black_Counter;
+//        player2.points = White_Counter;
+//    }
+//    
+//}
 //This file is create and written by Jiazheng Li 16212162
