@@ -425,14 +425,14 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
     int nmbr = 1;
 
     /* removing any position that repeats itself */
-    for(int i = 0; i < counter; i++){
+  /*  for(int i = 0; i < counter; i++){
       for(int j = 1; j < counter; j++){
         if(row[i] == row[i+j] && col[i] == col[i+j]){
           row[i+j] = -1;
           col[i+j] = -1;
         }
       }
-    }
+    }*/
 
     /* displaying the positions available to the user */
     printf("\n<%s> choose your next move: \n", player1.name);
@@ -443,9 +443,12 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
         }
     }
 
+
       /* taking user's choice */
       printf("\n\n? ");
       scanf("%d", &userChoice);
+
+    //  printf("\nUSER CHOICE: (%d, %d)\n", row[userChoice-1], col[userChoice-1]);
 
       /* passing the information to the disk-placement function */
       players_placement(BLACK, row[userChoice-1], col[userChoice-1], board);
@@ -871,14 +874,14 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
     }
 
     /* removing any position that repeats itself */
-    for(int i = 0; i < counter1; i++){
+  /*  for(int i = 0; i < counter1; i++){
       for(int j = 1; j < counter1; j++){
         if(row1[i] == row1[i+j] && col1[i] == col1[i+j]){
           row1[i+j] = -1;
           col1[i+j] = -1;
         }
       }
-    }
+    }*/
 
     /* displaying the positions available to the user */
     int nmbr1 = 1;
@@ -894,6 +897,8 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
       int userChoice1;
       printf("\n\n? ");
       scanf("%d", &userChoice1);
+
+    //  printf("\nUSER CHOICE: (%d, %d)\n", row1[userChoice1-1], col1[userChoice1-1]);
 
       /* passing the information to the disk-placement function */
       players_placement(WHITE, row1[userChoice1-1], col1[userChoice1-1], board);
