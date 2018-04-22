@@ -508,9 +508,9 @@ void Renew_Player_Points (player *player1, player *player2, disk board[SIZE][SIZ
     int White_Counter = 0,Black_Counter = 0;
     
     //for loop for counting
-    for (int Row_Counter = 0; Row_Counter <= 8; Row_Counter++)
+    for (int Row_Counter = 0; Row_Counter < 8; Row_Counter++)
     {
-        for (int Column_Counter = 0; Column_Counter <= 8; Column_Counter++)
+        for (int Column_Counter = 0; Column_Counter < 8; Column_Counter++)
         {
             //If board is not empty, count the disk
             if (board[Row_Counter][Column_Counter].type != NONE)
