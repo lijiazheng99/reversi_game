@@ -9,5 +9,5 @@ void Check_And_Reversi (enum colour defiened_colour, int row, int column, disk b
 
 /*WARNING: THIS SUB-FUNCTION MUST! BE! USE! AFTER! REVERSI! FUNCTION!*/
 /*Sub-function for renew points by count different color of disks*/
-//void Renew_Player_Points (player player1, player player2, disk board[SIZE][SIZE]);
+void Renew_Player_Points (player *player1, player *player2, disk board[SIZE][SIZE]);
 //This file is create and written by Jiazheng Li 16212162
