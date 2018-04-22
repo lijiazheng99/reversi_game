@@ -1,5 +1,5 @@
 /*PLEASE DON'T DELETE*/
-//This file is create and written by Jiazheng Li 16212162
+//This file is create and written by Ying Ai 16759485
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -936,4 +936,4 @@ void Save_final_result (player player1, player player2)
         fclose(cfPtr);
     }
 }
-//This file is create and written by Jiazheng Li 16212162
+//This file is create and written by Ying Ai 16759485
