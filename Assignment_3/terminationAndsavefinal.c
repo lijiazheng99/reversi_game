@@ -902,7 +902,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
     }
     else
     {
-        return 0;
+        return 100;
     }
 }
 
