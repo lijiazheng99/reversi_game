@@ -21,7 +21,7 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE],int emp
             printf("Game is over, there is no possible moves for both players.\n");
             
             printf("Player1 %s, points %d;\n",player1.name,player1.points);
-            printf("Player2 %s, points %d;\n",player2.name,player1.points);
+            printf("Player2 %s, points %d;\n",player2.name,player2.points);
             
             if(player1.points > player2.points)
             {
@@ -45,7 +45,7 @@ int Termination (player player1, player player2 , disk board[SIZE][SIZE],int emp
         printf("Game is over, there is no empty space.\n");
         
         printf("Player1 %s, points %d;\n",player1.name,player1.points);
-        printf("Player2 %s, points %d;\n",player2.name,player1.points);
+        printf("Player2 %s, points %d;\n",player2.name,player2.points);
         
         if(player1.points > player2.points)
         {
