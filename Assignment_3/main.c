@@ -11,7 +11,7 @@
 
 #include "computePositions.h"
 
-int Empty_Sapce_Counter (disk board[SIZE][SIZE]);
+int Empty_Space_Counter_Function (disk board[SIZE][SIZE]);
 
 int main()
 {
@@ -29,7 +29,8 @@ int main()
     printBoard(board);
     
     int termination_sign = 0;
-    int turns = 60;
+    int turns = 80;
+    
     
     while (termination_sign != 1)
     {
@@ -42,7 +43,11 @@ int main()
             {
                 computePositions_Black(board, player1);
                 
+                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
+                
                 Renew_Player_Points (&player1, &player2, board);
+                
+                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
@@ -57,7 +62,11 @@ int main()
             {
                 computePositions_White(board, player2);
                 
+                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
+                
                 Renew_Player_Points (&player1, &player2, board);
+                
+                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
@@ -65,6 +74,7 @@ int main()
             }
         }
         
+        Empty_Space_Counter=Empty_Space_Counter_Function(board);
         
         if (Possible_position_check(BLACK, board)==0 && Possible_position_check(WHITE, board))
         {
@@ -82,7 +92,7 @@ int main()
     puts("");
 }
 
-int Empty_Sapce_Counter (disk board[SIZE][SIZE])
+int Empty_Space_Counter_Function (disk board[SIZE][SIZE])
 {
     int Empty_Space_Counter=0;
     for (int RowCounter=0; RowCounter<8; RowCounter++)
