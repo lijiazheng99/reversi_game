@@ -1,5 +1,4 @@
 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "disksAndPlayers.h"
@@ -43,11 +42,7 @@ int main()
             {
                 computePositions_Black(board, player1);
                 
-                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
-                
                 Renew_Player_Points (&player1, &player2, board);
-                
-                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
@@ -62,11 +57,7 @@ int main()
             {
                 computePositions_White(board, player2);
                 
-                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
-                
                 Renew_Player_Points (&player1, &player2, board);
-                
-                printf("Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
