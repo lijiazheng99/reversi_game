@@ -1,4 +1,5 @@
 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "disksAndPlayers.h"
@@ -29,7 +30,7 @@ int main()
     
     int termination_sign = 0;
     int turns = 80;
-    
+
     
     while (termination_sign != 1)
     {
@@ -42,7 +43,11 @@ int main()
             {
                 computePositions_Black(board, player1);
                 
+                //printf("*Debug Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
+                
                 Renew_Player_Points (&player1, &player2, board);
+                
+                //printf("*Debug Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
@@ -57,7 +62,11 @@ int main()
             {
                 computePositions_White(board, player2);
                 
+                //printf("*Debug Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
+                
                 Renew_Player_Points (&player1, &player2, board);
+                
+                //printf("*Debug Points 1:%d Points 2:%d Total:%d\n",player1.points,player2.points,player1.points+player2.points);
                 
                 printBoard(board);
                 
@@ -66,8 +75,10 @@ int main()
         }
         
         Empty_Space_Counter=Empty_Space_Counter_Function(board);
+        //printf("*Debug Black %d",Possible_position_check(BLACK, board));
+        //printf("*Debug White %d",Possible_position_check(WHITE, board));
         
-        if (Possible_position_check(BLACK, board)==0 && Possible_position_check(WHITE, board))
+        if (Possible_position_check(BLACK, board)==0 && Possible_position_check(WHITE, board)==0)
         {
             termination_sign = Termination (player1, player2 , board, Empty_Space_Counter);
         }
@@ -96,5 +107,6 @@ int Empty_Space_Counter_Function (disk board[SIZE][SIZE])
             }
         }
     }
+    //printf("*Debug Empty space:%d\n",Empty_Space_Counter);
     return Empty_Space_Counter;
 }
