@@ -71,17 +71,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
 {
     if (defiened_colour == BLACK)
     {
-        /* variables to save column and row number */
-        int row[30];
-        int col[30];
         int counter = 0;
-        
-        /* initializing all elements to 10000 for better usage later on
-         in the program  */
-        for(int i = 0; i < 30; i++){
-            row[i] = -1;
-            col[i] = -1;
-        }
         
         /* checking horizontally left to right */
         for(int i = 0; i <=7; i++){
@@ -89,43 +79,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i][j+1].type == WHITE && board[i][j+2].type == NONE){
                         if(i >= 0 && i <= 7 && j+2 >= 0 && j+2 <= 7){
-                            row[counter] = i;
-                            col[counter] = j+2;
                             counter++;
                         }
                     }
                     else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == NONE){
                         if(i >= 0 && i <= 7 && j+3 >= 0 && j+3 <= 7){
-                            row[counter] = i;
-                            col[counter] = j + 3;
                             counter++;
                         }
                     }
                     else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == NONE){
                         if(i >= 0 && i <= 7 && j+4 >= 0 && j+4 <= 7){
-                            row[counter] = i;
-                            col[counter] = j + 4;
                             counter++;
                         }
                     }
                     else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == NONE){
                         if(i >= 0 && i <= 7 && j+5 >= 0 && j+5 <= 7){
-                            row[counter] = i;
-                            col[counter] = j + 5;
                             counter++;
                         }
                     }
                     else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == WHITE && board[i][j+6].type == NONE){
                         if(i >= 0 && i <= 7 && j+6 >= 0 && j+6 <= 7){
-                            row[counter] = i;
-                            col[counter] = j + 6;
                             counter++;
                         }
                     }
                     else if(board[i][j+1].type == WHITE && board[i][j+2].type == WHITE && board[i][j+3].type == WHITE && board[i][j+4].type == WHITE && board[i][j+5].type == WHITE && board[i][j+6].type == WHITE && board[i][j+7].type == NONE){
                         if(i >= 0 && i <= 7 && j+7 >= 0 && j+7 <= 7){
-                            row[counter] = i;
-                            col[counter] = j + 7;
                             counter++;
                         }
                     }
@@ -139,43 +117,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i][j-1].type == WHITE && board[i][j-2].type == NONE){
                         if(i >= 0 && i <= 7 && j-2 >= 0 && j-2 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 2;
                             counter++;
                         }
                     }
                     else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == NONE){
                         if(i >= 0 && i <= 7 && j-3 >= 0 && j-3 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 3;
                             counter++;
                         }
                     }
                     else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == NONE){
                         if(i >= 0 && i <= 7 && j-4 >= 0 && j-4 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 4;
                             counter++;
                         }
                     }
                     else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == NONE){
                         if(i >= 0 && i <= 7 && j-5 >= 0 && j-5 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 5;
                             counter++;
                         }
                     }
                     else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == WHITE && board[i][j-6].type == NONE){
                         if(i >= 0 && i <= 7 && j-6 >= 0 && j-6 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 6;
                             counter++;
                         }
                     }
                     else if(board[i][j-1].type == WHITE && board[i][j-2].type == WHITE && board[i][j-3].type == WHITE && board[i][j-4].type == WHITE && board[i][j-5].type == WHITE && board[i][j-6].type == WHITE && board[i][j-7].type == NONE){
                         if(i >= 0 && i <= 7 && j-7 >= 0 && j-7 <= 7){
-                            row[counter] = i;
-                            col[counter] = j - 7;
                             counter++;
                         }
                     }
@@ -189,43 +155,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[j][i].type == BLACK){
                     if(board[j+1][i].type == WHITE && board[j+2][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+2 >= 0 && j+2 <=7){
-                            row[counter] = j + 2;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+3 >= 0 && j+3 <=7){
-                            row[counter] = j + 3;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+4 >= 0 && j+4 <=7){
-                            row[counter] = j + 4;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+5 >= 0 && j+5 <=7){
-                            row[counter] = j + 5;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == WHITE && board[j+6][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+6 >= 0 && j+6 <=7){
-                            row[counter] = j + 6;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j+1][i].type == WHITE && board[j+2][i].type == WHITE && board[j+3][i].type == WHITE && board[j+4][i].type == WHITE && board[j+5][i].type == WHITE && board[j+6][i].type == WHITE && board[j+7][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+7 >= 0 && j+7 <=7){
-                            row[counter] = j + 7;
-                            col[counter] = i;
                             counter++;
                         }
                     }
@@ -239,43 +193,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[j][i].type == BLACK){
                     if(board[j-1][i].type == WHITE && board[j-2][i].type == NONE){
                         if(i >= 0 && i <=7 && j-2 >= 0 && j-2 <= 7){
-                            row[counter] = j - 2;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == NONE){
                         if(i >= 0 && i <=7 && j-3 >= 0 && j-3 <= 7){
-                            row[counter] = j - 3;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == NONE){
                         if(i >= 0 && i <=7 && j-4 >= 0 && j-4 <= 7){
-                            row[counter] = j - 4;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == NONE){
                         if(i >= 0 && i <=7 && j-5 >= 0 && j-5 <= 7){
-                            row[counter] = j - 5;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == WHITE && board[j-6][i].type == NONE){
                         if(i >= 0 && i <=7 && j-6 >= 0 && j-6 <= 7){
-                            row[counter] = j - 6;
-                            col[counter] = i;
                             counter++;
                         }
                     }
                     else if(board[j-1][i].type == WHITE && board[j-2][i].type == WHITE && board[j-3][i].type == WHITE && board[j-4][i].type == WHITE && board[j-5][i].type == WHITE && board[j-6][i].type == WHITE && board[j-7][i].type == NONE){
                         if(i >= 0 && i <=7 && j-7 >= 0 && j-7 <= 7){
-                            row[counter] = j - 7;
-                            col[counter] = i;
                             counter++;
                         }
                     }
@@ -289,43 +231,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == NONE){
                         if(i-2 >= 0 && i-2 <= 7 && j+2 >= 0 && j+2 <= 7){
-                            row[counter] = i - 2;
-                            col[counter] = j + 2;
                             counter++;
                         }
                     }
                     else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == NONE){
                         if(i-3 >= 0 && i-3 <= 7 && j+3 >= 0 && j+3 <= 7){
-                            row[counter] = i - 3;
-                            col[counter] = j + 3;
                             counter++;
                         }
                     }
                     else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == NONE){
                         if(i-4 >= 0 && i-4 <= 7 && j+4 >= 0 && j+4 <= 7){
-                            row[counter] = i - 4;
-                            col[counter] = j + 4;
                             counter++;
                         }
                     }
                     else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == NONE){
                         if(i-5 >= 0 && i-5 <= 7 && j+5 >= 0 && j+5 <= 7){
-                            row[counter] = i - 5;
-                            col[counter] = j + 5;
                             counter++;
                         }
                     }
                     else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == WHITE && board[i-6][j+6].type == NONE){
                         if(i-6 >= 0 && i-6 <= 7 && j+6 >= 0 && j+6 <= 7){
-                            row[counter] = i - 6;
-                            col[counter] = j + 6;
                             counter++;
                         }
                     }
                     else if(board[i-1][j+1].type == WHITE && board[i-2][j+2].type == WHITE && board[i-3][j+3].type == WHITE && board[i-4][j+4].type == WHITE && board[i-5][j+5].type == WHITE && board[i-6][j+6].type == WHITE && board[i-7][j+7].type == NONE){
                         if(i-7 >= 0 && i-7 <= 7 && j+7 >= 0 && j+7 <= 7){
-                            row[counter] = i - 7;
-                            col[counter] = j + 7;
                             counter++;
                         }
                     }
@@ -339,43 +269,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == NONE){
                         if(i+2 >= 0 && i+2 <= 7 && j-2 >= 0 && j-2 <= 7){
-                            row[counter] = i + 2;
-                            col[counter] = j - 2;
                             counter++;
                         }
                     }
                     else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == NONE){
                         if(i+3 >= 0 && i+3 <= 7 && j-3 >= 0 && j-3 <= 7){
-                            row[counter] = i + 3;
-                            col[counter] = j - 3;
                             counter++;
                         }
                     }
                     else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == NONE){
                         if(i+4 >= 0 && i+4 <= 7 && j-4 >= 0 && j-4 <= 7){
-                            row[counter] = i + 4;
-                            col[counter] = j - 4;
                             counter++;
                         }
                     }
                     else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == NONE){
                         if(i+5 >= 0 && i+5 <= 7 && j-5 >= 0 && j-5 <= 7){
-                            row[counter] = i + 5;
-                            col[counter] = j - 5;
                             counter++;
                         }
                     }
                     else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == WHITE && board[i+6][j-6].type == NONE){
                         if(i+6 >= 0 && i+6 <= 7 && j-6 >= 0 && j-6 <= 7){
-                            row[counter] = i + 6;
-                            col[counter] = j - 6;
                             counter++;
                         }
                     }
                     else if(board[i+1][j-1].type == WHITE && board[i+2][j-2].type == WHITE && board[i+3][j-3].type == WHITE && board[i+4][j-4].type == WHITE && board[i+5][j-5].type == WHITE && board[i+6][j-6].type == WHITE && board[i+7][j-7].type == NONE){
                         if(i+7 >= 0 && i+7 <= 7 && j-7 >= 0 && j-7 <= 7){
-                            row[counter] = i + 7;
-                            col[counter] = j - 7;
                             counter++;
                         }
                     }
@@ -389,43 +307,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == NONE){
                         if(i+2 >= 0 && i+2 <=7 && j+2 >= 0 && j+2 <=7){
-                            row[counter] = i + 2;
-                            col[counter] = j + 2;
                             counter++;
                         }
                     }
                     else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == NONE){
                         if(i+3 >= 0 && i+3 <=7 && j+3 >= 0 && j+3 <=7){
-                            row[counter] = i + 3;
-                            col[counter] = j + 3;
                             counter++;
                         }
                     }
                     else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == NONE){
                         if(i+4 >= 0 && i+4 <=7 && j+4 >= 0 && j+4 <=7){
-                            row[counter] = i + 4;
-                            col[counter] = j + 4;
                             counter++;
                         }
                     }
                     else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == NONE){
                         if(i+5 >= 0 && i+5 <=7 && j+5 >= 0 && j+5 <=7){
-                            row[counter] = i + 5;
-                            col[counter] = j + 5;
                             counter++;
                         }
                     }
                     else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == WHITE && board[i+6][j+6].type == NONE){
                         if(i+6 >= 0 && i+6 <=7 && j+6 >= 0 && j+6 <=7){
-                            row[counter] = i + 6;
-                            col[counter] = j + 6;
                             counter++;
                         }
                     }
                     else if(board[i+1][j+1].type == WHITE && board[i+2][j+2].type == WHITE && board[i+3][j+3].type == WHITE && board[i+4][j+4].type == WHITE && board[i+5][j+5].type == WHITE && board[i+6][j+6].type == WHITE && board[i+7][j+7].type == NONE){
                         if(i+7 >= 0 && i+7 <=7 && j+7 >= 0 && j+7 <=7){
-                            row[counter] = i + 7;
-                            col[counter] = j + 7;
                             counter++;
                         }
                     }
@@ -439,43 +345,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == BLACK){
                     if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == NONE){
                         if(i-2 >= 0 && i-2 <= 7 && j-2 >= 0 && j-2 <=7){
-                            row[counter] = i - 2;
-                            col[counter] = j - 2;
                             counter++;
                         }
                     }
                     else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == NONE){
                         if(i-3 >= 0 && i-3 <= 7 && j-3 >= 0 && j-3 <=7){
-                            row[counter] = i - 3;
-                            col[counter] = j - 3;
                             counter++;
                         }
                     }
                     else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == NONE){
                         if(i-4 >= 0 && i-4 <= 7 && j-4 >= 0 && j-4 <=7){
-                            row[counter] = i - 4;
-                            col[counter] = j - 4;
                             counter++;
                         }
                     }
                     else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == NONE){
                         if(i-5 >= 0 && i-5 <= 7 && j-5 >= 0 && j-5 <=7){
-                            row[counter] = i - 5;
-                            col[counter] = j - 5;
                             counter++;
                         }
                     }
                     else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == WHITE && board[i-6][j-6].type == NONE){
                         if(i-6 >= 0 && i-6 <= 7 && j-6 >= 0 && j-6 <=7){
-                            row[counter] = i - 6;
-                            col[counter] = j - 6;
                             counter++;
                         }
                     }
                     else if(board[i-1][j-1].type == WHITE && board[i-2][j-2].type == WHITE && board[i-3][j-3].type == WHITE && board[i-4][j-4].type == WHITE && board[i-5][j-5].type == WHITE && board[i-6][j-6].type == WHITE && board[i-7][j-7].type == NONE){
                         if(i-7 >= 0 && i-7 <= 7 && j-7 >= 0 && j-7 <=7){
-                            row[counter] = i - 7;
-                            col[counter] = j - 7;
                             counter++;
                         }
                     }
@@ -487,17 +381,7 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
     
     else if(defiened_colour == WHITE)
     {
-        /* variables to save column and row number */
-        int row1[30];
-        int col1[30];
         int counter1 = 0;
-        
-        /* initializing all elements to -1 for better usage later on
-         in the program  */
-        for(int i = 0; i < 30; i++){
-            row1[i] = -1;
-            col1[i] = -1;
-        }
         
         /* checking horizontally left to right */
         for(int i = 0; i <=7; i++){
@@ -505,43 +389,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i][j+1].type == BLACK && board[i][j+2].type == NONE){
                         if(i >= 0 && i <= 7 && j+2 >= 0 && j+2 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j+2;
                             counter1++;
                         }
                     }
                     else if(board[i][j+1].type == BLACK && board[i][j+2].type == BLACK && board[i][j+3].type == NONE){
                         if(i >= 0 && i <= 7 && j+3 >= 0 && j+3 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j + 3;
                             counter1++;
                         }
                     }
                     else if(board[i][j+1].type == BLACK && board[i][j+2].type == BLACK && board[i][j+3].type == BLACK && board[i][j+4].type == NONE){
                         if(i >= 0 && i <= 7 && j+4 >= 0 && j+4 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j + 4;
                             counter1++;
                         }
                     }
                     else if(board[i][j+1].type == BLACK && board[i][j+2].type == BLACK && board[i][j+3].type == BLACK && board[i][j+4].type == BLACK && board[i][j+5].type == NONE){
                         if(i >= 0 && i <= 7 && j+5 >= 0 && j+5 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j + 5;
                             counter1++;
                         }
                     }
                     else if(board[i][j+1].type == BLACK && board[i][j+2].type == BLACK && board[i][j+3].type == BLACK && board[i][j+4].type == BLACK && board[i][j+5].type == BLACK && board[i][j+6].type == NONE){
                         if(i >= 0 && i <= 7 && j+6 >= 0 && j+6 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j + 6;
                             counter1++;
                         }
                     }
                     else if(board[i][j+1].type == BLACK && board[i][j+2].type == BLACK && board[i][j+3].type == BLACK && board[i][j+4].type == BLACK && board[i][j+5].type == BLACK && board[i][j+6].type == BLACK && board[i][j+7].type == NONE){
                         if(i >= 0 && i <= 7 && j+7 >= 0 && j+7 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j + 7;
                             counter1++;
                         }
                     }
@@ -555,43 +427,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i][j-1].type == BLACK && board[i][j-2].type == NONE){
                         if(i >= 0 && i <= 7 && j-2 >= 0 && j-2 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 2;
                             counter1++;
                         }
                     }
                     else if(board[i][j-1].type == BLACK && board[i][j-2].type == BLACK && board[i][j-3].type == NONE){
                         if(i >= 0 && i <= 7 && j-3 >= 0 && j-3 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 3;
                             counter1++;
                         }
                     }
                     else if(board[i][j-1].type == BLACK && board[i][j-2].type == BLACK && board[i][j-3].type == BLACK && board[i][j-4].type == NONE){
                         if(i >= 0 && i <= 7 && j-4 >= 0 && j-4 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 4;
                             counter1++;
                         }
                     }
                     else if(board[i][j-1].type == BLACK && board[i][j-2].type == BLACK && board[i][j-3].type == BLACK && board[i][j-4].type == BLACK && board[i][j-5].type == NONE){
                         if(i >= 0 && i <= 7 && j-5 >= 0 && j-5 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 5;
                             counter1++;
                         }
                     }
                     else if(board[i][j-1].type == BLACK && board[i][j-2].type == BLACK && board[i][j-3].type == BLACK && board[i][j-4].type == BLACK && board[i][j-5].type == BLACK && board[i][j-6].type == NONE){
                         if(i >= 0 && i <= 7 && j-6 >= 0 && j-6 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 6;
                             counter1++;
                         }
                     }
                     else if(board[i][j-1].type == BLACK && board[i][j-2].type == BLACK && board[i][j-3].type == BLACK && board[i][j-4].type == BLACK && board[i][j-5].type == BLACK && board[i][j-6].type == BLACK && board[i][j-7].type == NONE){
                         if(i >= 0 && i <= 7 && j-7 >= 0 && j-7 <= 7){
-                            row1[counter1] = i;
-                            col1[counter1] = j - 7;
                             counter1++;
                         }
                     }
@@ -605,43 +465,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[j][i].type == WHITE){
                     if(board[j+1][i].type == BLACK && board[j+2][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+2 >= 0 && j+2 <=7){
-                            row1[counter1] = j + 2;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j+1][i].type == BLACK && board[j+2][i].type == BLACK && board[j+3][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+3 >= 0 && j+3 <=7){
-                            row1[counter1] = j + 3;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j+1][i].type == BLACK && board[j+2][i].type == BLACK && board[j+3][i].type == BLACK && board[j+4][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+4 >= 0 && j+4 <=7){
-                            row1[counter1] = j + 4;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j+1][i].type == BLACK && board[j+2][i].type == BLACK && board[j+3][i].type == BLACK && board[j+4][i].type == BLACK && board[j+5][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+5 >= 0 && j+5 <=7){
-                            row1[counter1] = j + 5;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j+1][i].type == BLACK && board[j+2][i].type == BLACK && board[j+3][i].type == BLACK && board[j+4][i].type == BLACK && board[j+5][i].type == BLACK && board[j+6][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+6 >= 0 && j+6 <=7){
-                            row1[counter1] = j + 6;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j+1][i].type == BLACK && board[j+2][i].type == BLACK && board[j+3][i].type == BLACK && board[j+4][i].type == BLACK && board[j+5][i].type == BLACK && board[j+6][i].type == BLACK && board[j+7][i].type == NONE){
                         if(i >= 0 && i <= 7 && j+7 >= 0 && j+7 <=7){
-                            row1[counter1] = j + 7;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
@@ -655,43 +503,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[j][i].type == WHITE){
                     if(board[j-1][i].type == BLACK && board[j-2][i].type == NONE){
                         if(i >= 0 && i <=7 && j-2 >= 0 && j-2 <= 7){
-                            row1[counter1] = j - 2;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j-1][i].type == BLACK && board[j-2][i].type == BLACK && board[j-3][i].type == NONE){
                         if(i >= 0 && i <=7 && j-3 >= 0 && j-3 <= 7){
-                            row1[counter1] = j - 3;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j-1][i].type == BLACK && board[j-2][i].type == BLACK && board[j-3][i].type == BLACK && board[j-4][i].type == NONE){
                         if(i >= 0 && i <=7 && j-4 >= 0 && j-4 <= 7){
-                            row1[counter1] = j - 4;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j-1][i].type == BLACK && board[j-2][i].type == BLACK && board[j-3][i].type == BLACK && board[j-4][i].type == BLACK && board[j-5][i].type == NONE){
                         if(i >= 0 && i <=7 && j-5 >= 0 && j-5 <= 7){
-                            row1[counter1] = j - 5;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j-1][i].type == BLACK && board[j-2][i].type == BLACK && board[j-3][i].type == BLACK && board[j-4][i].type == BLACK && board[j-5][i].type == BLACK && board[j-6][i].type == NONE){
                         if(i >= 0 && i <=7 && j-6 >= 0 && j-6 <= 7){
-                            row1[counter1] = j - 6;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
                     else if(board[j-1][i].type == BLACK && board[j-2][i].type == BLACK && board[j-3][i].type == BLACK && board[j-4][i].type == BLACK && board[j-5][i].type == BLACK && board[j-6][i].type == BLACK && board[j-7][i].type == NONE){
                         if(i >= 0 && i <=7 && j-7 >= 0 && j-7 <= 7){
-                            row1[counter1] = j - 7;
-                            col1[counter1] = i;
                             counter1++;
                         }
                     }
@@ -705,43 +541,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == NONE){
                         if(i-2 >= 0 && i-2 <= 7 && j+2 >= 0 && j+2 <= 7){
-                            row1[counter1] = i - 2;
-                            col1[counter1] = j + 2;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == BLACK && board[i-3][j+3].type == NONE){
                         if(i-3 >= 0 && i-3 <= 7 && j+3 >= 0 && j+3 <= 7){
-                            row1[counter1] = i - 3;
-                            col1[counter1] = j + 3;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == BLACK && board[i-3][j+3].type == BLACK && board[i-4][j+4].type == NONE){
                         if(i-4 >= 0 && i-4 <= 7 && j+4 >= 0 && j+4 <= 7){
-                            row1[counter1] = i - 4;
-                            col1[counter1] = j + 4;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == BLACK && board[i-3][j+3].type == BLACK && board[i-4][j+4].type == BLACK && board[i-5][j+5].type == NONE){
                         if(i-5 >= 0 && i-5 <= 7 && j+5 >= 0 && j+5 <= 7){
-                            row1[counter1] = i - 5;
-                            col1[counter1] = j + 5;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == BLACK && board[i-3][j+3].type == BLACK && board[i-4][j+4].type == BLACK && board[i-5][j+5].type == BLACK && board[i-6][j+6].type == NONE){
                         if(i-6 >= 0 && i-6 <= 7 && j+6 >= 0 && j+6 <= 7){
-                            row1[counter1] = i - 6;
-                            col1[counter1] = j + 6;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j+1].type == BLACK && board[i-2][j+2].type == BLACK && board[i-3][j+3].type == BLACK && board[i-4][j+4].type == BLACK && board[i-5][j+5].type == BLACK && board[i-6][j+6].type == BLACK && board[i-7][j+7].type == NONE){
                         if(i-7 >= 0 && i-7 <= 7 && j+7 >= 0 && j+7 <= 7){
-                            row1[counter1] = i - 7;
-                            col1[counter1] = j + 7;
                             counter1++;
                         }
                     }
@@ -755,43 +579,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == NONE){
                         if(i+2 >= 0 && i+2 <= 7 && j-2 >= 0 && j-2 <= 7){
-                            row1[counter1] = i + 2;
-                            col1[counter1] = j - 2;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == BLACK && board[i+3][j-3].type == NONE){
                         if(i+3 >= 0 && i+3 <= 7 && j-3 >= 0 && j-3 <= 7){
-                            row1[counter1] = i + 3;
-                            col1[counter1] = j - 3;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == BLACK && board[i+3][j-3].type == BLACK && board[i+4][j-4].type == NONE){
                         if(i+4 >= 0 && i+4 <= 7 && j-4 >= 0 && j-4 <= 7){
-                            row1[counter1] = i + 4;
-                            col1[counter1] = j - 4;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == BLACK && board[i+3][j-3].type == BLACK && board[i+4][j-4].type == BLACK && board[i+5][j-5].type == NONE){
                         if(i+5 >= 0 && i+5 <= 7 && j-5 >= 0 && j-5 <= 7){
-                            row1[counter1] = i + 5;
-                            col1[counter1] = j - 5;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == BLACK && board[i+3][j-3].type == BLACK && board[i+4][j-4].type == BLACK && board[i+5][j-5].type == BLACK && board[i+6][j-6].type == NONE){
                         if(i+6 >= 0 && i+6 <= 7 && j-6 >= 0 && j-6 <= 7){
-                            row1[counter1] = i + 6;
-                            col1[counter1] = j - 6;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j-1].type == BLACK && board[i+2][j-2].type == BLACK && board[i+3][j-3].type == BLACK && board[i+4][j-4].type == BLACK && board[i+5][j-5].type == BLACK && board[i+6][j-6].type == BLACK && board[i+7][j-7].type == NONE){
                         if(i+7 >= 0 && i+7 <= 7 && j-7 >= 0 && j-7 <= 7){
-                            row1[counter1] = i + 7;
-                            col1[counter1] = j - 7;
                             counter1++;
                         }
                     }
@@ -805,43 +617,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == NONE){
                         if(i+2 >= 0 && i+2 <=7 && j+2 >= 0 && j+2 <=7){
-                            row1[counter1] = i + 2;
-                            col1[counter1] = j + 2;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == BLACK && board[i+3][j+3].type == NONE){
                         if(i+3 >= 0 && i+3 <=7 && j+3 >= 0 && j+3 <=7){
-                            row1[counter1] = i + 3;
-                            col1[counter1] = j + 3;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == BLACK && board[i+3][j+3].type == BLACK && board[i+4][j+4].type == NONE){
                         if(i+4 >= 0 && i+4 <=7 && j+4 >= 0 && j+4 <=7){
-                            row1[counter1] = i + 4;
-                            col1[counter1] = j + 4;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == BLACK && board[i+3][j+3].type == BLACK && board[i+4][j+4].type == BLACK && board[i+5][j+5].type == NONE){
                         if(i+5 >= 0 && i+5 <=7 && j+5 >= 0 && j+5 <=7){
-                            row1[counter1] = i + 5;
-                            col1[counter1] = j + 5;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == BLACK && board[i+3][j+3].type == BLACK && board[i+4][j+4].type == BLACK && board[i+5][j+5].type == BLACK && board[i+6][j+6].type == NONE){
                         if(i+6 >= 0 && i+6 <=7 && j+6 >= 0 && j+6 <=7){
-                            row1[counter1] = i + 6;
-                            col1[counter1] = j + 6;
                             counter1++;
                         }
                     }
                     else if(board[i+1][j+1].type == BLACK && board[i+2][j+2].type == BLACK && board[i+3][j+3].type == BLACK && board[i+4][j+4].type == BLACK && board[i+5][j+5].type == BLACK && board[i+6][j+6].type == BLACK && board[i+7][j+7].type == NONE){
                         if(i+7 >= 0 && i+7 <=7 && j+7 >= 0 && j+7 <=7){
-                            row1[counter1] = i + 7;
-                            col1[counter1] = j + 7;
                             counter1++;
                         }
                     }
@@ -855,43 +655,31 @@ int Possible_position_check (enum colour defiened_colour , disk board[SIZE][SIZE
                 if(board[i][j].type == WHITE){
                     if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == NONE){
                         if(i-2 >= 0 && i-2 <= 7 && j-2 >= 0 && j-2 <=7){
-                            row1[counter1] = i - 2;
-                            col1[counter1] = j - 2;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == BLACK && board[i-3][j-3].type == NONE){
                         if(i-3 >= 0 && i-3 <= 7 && j-3 >= 0 && j-3 <=7){
-                            row1[counter1] = i - 3;
-                            col1[counter1] = j - 3;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == BLACK && board[i-3][j-3].type == BLACK && board[i-4][j-4].type == NONE){
                         if(i-4 >= 0 && i-4 <= 7 && j-4 >= 0 && j-4 <=7){
-                            row1[counter1] = i - 4;
-                            col1[counter1] = j - 4;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == BLACK && board[i-3][j-3].type == BLACK && board[i-4][j-4].type == BLACK && board[i-5][j-5].type == NONE){
                         if(i-5 >= 0 && i-5 <= 7 && j-5 >= 0 && j-5 <=7){
-                            row1[counter1] = i - 5;
-                            col1[counter1] = j - 5;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == BLACK && board[i-3][j-3].type == BLACK && board[i-4][j-4].type == BLACK && board[i-5][j-5].type == BLACK && board[i-6][j-6].type == NONE){
                         if(i-6 >= 0 && i-6 <= 7 && j-6 >= 0 && j-6 <=7){
-                            row1[counter1] = i - 6;
-                            col1[counter1] = j - 6;
                             counter1++;
                         }
                     }
                     else if(board[i-1][j-1].type == BLACK && board[i-2][j-2].type == BLACK && board[i-3][j-3].type == BLACK && board[i-4][j-4].type == BLACK && board[i-5][j-5].type == BLACK && board[i-6][j-6].type == BLACK && board[i-7][j-7].type == NONE){
                         if(i-7 >= 0 && i-7 <= 7 && j-7 >= 0 && j-7 <=7){
-                            row1[counter1] = i - 7;
-                            col1[counter1] = j - 7;
                             counter1++;
                         }
                     }
