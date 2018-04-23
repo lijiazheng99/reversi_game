@@ -442,7 +442,7 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
     int inside_counter=0;
     for (int copy_counter=0; copy_counter<counter; copy_counter++)
     {
-        if (row[copy_counter] != -1 || col[copy_counter] != -1)
+        if (row[copy_counter] != -1 && col[copy_counter] != -1)
         {
             row_copy[inside_counter]=row[copy_counter];
             column_copy[inside_counter]=col[copy_counter];
@@ -452,7 +452,7 @@ void computePositions_Black (disk board[SIZE][SIZE], player player1)
     
     /* displaying the positions available to the user */
     printf("\n<%s> choose your next move: \n", player1.name);
-    for(int print = 0; print < counter; print++)
+    for(int print = 0; print < inside_counter; print++)
     {
         printf("%d. (%d, %d)\t", nmbr, row_copy[print]+1, column_copy[print]+1);
         nmbr++;
@@ -907,7 +907,7 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
     int inside_counter=0;
     for (int copy_counter=0; copy_counter<counter1; copy_counter++)
     {
-        if (row1[copy_counter] != -1 || col1[copy_counter] != -1)
+        if (row1[copy_counter] != -1 && col1[copy_counter] != -1)
         {
             row_copy[inside_counter]=row1[copy_counter];
             column_copy[inside_counter]=col1[copy_counter];
@@ -917,7 +917,7 @@ void computePositions_White (disk board[SIZE][SIZE], player player2)
     
     /* displaying the positions available to the user */
     printf("\n<%s> choose your next move: \n", player2.name);
-    for(int print = 0; print < counter1; print++)
+    for(int print = 0; print < inside_counter; print++)
     {
         printf("%d. (%d, %d)\t", nmbr, row_copy[print]+1, column_copy[print]+1);
         nmbr++;
